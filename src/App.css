@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.productContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 25px;
+    border: 2px solid gray;
+    height: 28rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-container{
+    display: block;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav{
+    display: flex;
+    justify-content: space-between;
+    height: 3.5rem;
+    align-items: center;
+    background-color: #047BD5;
+    list-style: none;
+    justify-content: space-around;
 }
-
-.App-link {
-  color: #61dafb;
+a{
+    text-decoration: none;
+    color: inherit;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav>li{
+    color: white;
+    cursor: pointer;
+}
+.nav>li>a:hover{
+    color: white;
+    font-weight: bold;
+}
+.icon{
+    font-size: 2.1rem;
+    /* padding-left: 4.7rem; */
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.cart{
+    /* padding-right: 9rem; */
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+}
+.card-body>div{
+    display: flex;
+    justify-content: space-between;
 }
