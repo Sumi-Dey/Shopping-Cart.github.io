@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { Cart } from '../Context';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators } from '../State/Index'
+import { actionCreators } from '../State/Index';
+// import Rating from './Rating';
 function SingleProduct({ prod }) {
     const { cart, setCart } = useContext(Cart);
     const dispatch = useDispatch();
@@ -19,14 +20,15 @@ function SingleProduct({ prod }) {
     return (
         <div>
             <div className="card" style={{ width: "18rem" }}>
-                <img src={prod.image} style={{height:"25rem"}} className="card-img-top" alt="..." />
+                <img src={prod.image} style={{ height: "25rem" }} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <p className="card-title">{prod.title.slice(0,25)}...</p>
+                    <p className="card-title">{prod.title.slice(0, 25)}...</p>
                     <div>
-                    <h6 className="card-title">{prod.price}</h6>
-                        {cart.includes(prod) ? <button to="/" className="btn btn-primary btn-sm"  onClick={removePrice}>Remove from cart</button> :
-                            <button to="/" className="btn btn-primary btn-sm"  onClick={addPrice}>Add to cart</button>}
+                        <h6 className="card-title">{prod.price}</h6>
+                        {cart.includes(prod) ? <button to="/" className="btn btn-danger btn-sm" onClick={removePrice}>Remove from cart</button> :
+                            <button to="/" className="btn btn-primary btn-sm" onClick={addPrice} >Add to Cart</button>}
                     </div>
+                    {/* <Rating Rating={prod.rating}  /> */}
                 </div>
             </div>
         </div>
