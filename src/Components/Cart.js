@@ -5,13 +5,17 @@ import { useSelector } from 'react-redux'
 function CartItem() {
   const { cart, setCart } = useContext(Cart)
   const amount = useSelector(state => state.amount)
+  console.log(cart)
 
   return (
+    <>
     <div>
       <div className='productContainer'>
         <div>
-          <div className='cart-title'>sBags ({cart.length})</div>
-          {cart.map((prod, index) => (
+          {cart.length==0?(<div className='emptycart'>
+            <img src='https://i.pinimg.com/736x/2e/ac/fa/2eacfa305d7715bdcd86bb4956209038--android.jpg' alt='...'/>
+          </div>):
+          (cart.map((prod, index) => (
             <div className='cartItems' key={index} >
               <div>
                 <img src={prod.image} style={{ width: "9rem", height: "9rem" }} alt='...' />
@@ -19,17 +23,14 @@ function CartItem() {
               <div>
                 {prod.title}<br />
                 {prod.price}<br />
-                <button className="btn btn-light" onClick={() => {
+                <button className="btn btn-light" style={{backgroundColor:"#EB455F",border:'none', color:"white"}} onClick={() => {
                   setCart(cart.filter((c) => c.price !== prod.price))
                 }}>REMOVE</button>
               </div>
             </div>
-          ))}
-          <div className='place-order'>
-            <button className='btn-lg' >Place Order</button>
-          </div>
+          )))}
         </div>
-        <div className='card cartTotal'>
+        {cart.length==0?<div></div>:<div className=' cartTotal'>
           <span style={{ color: "gray" }}>Price Details</span>
           <hr />
           <div>
@@ -51,10 +52,13 @@ function CartItem() {
               <span style={{ fontWeight: "bold" }}>{amount}</span>
             </div>
           </div>
-        </div>
+        </div>}
       </div>
-
     </div>
+    {cart.length==0?<div></div>:<div className='place-order'>
+            <button className='btn-lg' style={{backgroundColor:"#473C33",color:'white',width:'28%'}}>Place Order</button>
+          </div>}
+    </>
   )
 }
 
