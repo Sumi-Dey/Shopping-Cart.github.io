@@ -1,21 +1,37 @@
-.productContainer {
+.maincontainer{
+    align-items: center;
     display: flex;
-    margin: 1rem;
-    gap: 1rem;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.app{
+    max-width: 930px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.productContainer {
+    margin-top: 2rem;
+    display: flex;
+    gap: 20px;
 }
 
 .productContainer>div:nth-of-type(1) {
     display: flex;
-    width: 80%;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-left: 1rem;
+    gap: 55.5px;
+    flex: 3;
 }
 
 .productContainer>div:nth-of-type(2) {
-    width: 23.3%;
     background-color: white;
     height: fit-content;
+    flex: 1;
+    position: sticky;
+    top: 0;
+}
+.wholecard{
+    box-shadow: 13.5px 12.8px 11px #cbbebe;
 }
 
 .place-order {
@@ -45,9 +61,10 @@
 }
 
 .nav-container {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
 .nav {
     display: flex;
     justify-content: space-between;
@@ -58,30 +75,16 @@
     justify-content: space-around;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.nav>li {
-    color: white;
-    cursor: pointer;
-}
-
-.nav>li>a:hover {
-    color: white;
-    font-weight: bold;
-}
-
 .icon {
     font-size: 2.1rem;
-    /* padding-left: 4.7rem; */
+    text-decoration: none;
+    color: #EB455F;
     align-items: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Merriweather', serif;
 }
 
 .cart {
-    /* padding-right: 9rem; */
+    color: #EB455F;
     font-size: 1.2rem;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
@@ -108,11 +111,11 @@ a {
     gap: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
-    padding: 1rem 0;
+    padding: 10px;
 }
 
 .cartItems>div:nth-of-type(1) {
-    width: 20%;
+    flex: 1;
     height: 10rem;
     text-align: center;
 }
@@ -122,7 +125,7 @@ a {
     line-height: 3rem;
     font-size: 1.2rem;
     font-family: 'Times New Roman', Times, serif;
-    width: 80%;
+    flex: 3;
 }
 
 .cartTotal {
@@ -130,6 +133,7 @@ a {
     gap: 0.5rem;
     font-size: 17px;
     font-family: 'Times New Roman', Times, serif;
+    box-shadow: 10px 10px 10px 5px lightgrey;
 }
 
 .cartTotal>div {
@@ -139,4 +143,38 @@ a {
 
 .cartTotal>hr {
     border-top: 1px dashed darkgrey;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:768px){
+    .app{
+        max-width: 600px;
+    }
+    .cartItems>div:nth-of-type(2) {
+        line-height: 33.5px;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:425px){
+    .app{
+        max-width: 260px;
+    }
+    .emptycart img{
+        width: 20rem;
+    }
+    .productContainer{
+        display: block;
+    }
+    .cartItems{
+        display: block;
+    }
+    .cartItems>div:nth-of-type(2) {
+        text-align: center;
+    }
+    .cartTotal{
+        width: 100%;
+        margin-top: 20px;
+    }
 }
