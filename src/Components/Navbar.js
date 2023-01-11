@@ -7,14 +7,12 @@ function Navbar() {
   const {cart} = useContext(Cart)
   return (
     <div className='nav-container'>
-      <ul className='nav'>
-        <li><Link to='/'><span className='icon'>sBags</span></Link></li>
-        <li><Link to='cart'><span className='cart'><BsFillCartFill fontSize="25px" />
-          <span className="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger">
-            {cart.length}
+        <div><Link to='/' style={{ textDecoration: 'none' }}><span className='icon'>sBags</span></Link></div>
+        <div><Link to='cart'><span className='cart'><BsFillCartFill fontSize="25px" />
+          <span className="position-absolute top-1 start-100 translate-middle badge rounded-pill" style={{backgroundColor:"#473C33"}}>
+           {cart.length} 
             <span className="visually-hidden">unread messages</span>
-          </span></span></Link></li>
-      </ul>
+          </span></span></Link></div>
     </div>
   )
 }
