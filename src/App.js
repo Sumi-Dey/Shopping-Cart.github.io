@@ -6,12 +6,14 @@ import Home from './Components/Home';
 
 function App() {
   return (
-    <div>
+    <div className='maincontainer'>
+    <div className='app'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
+    </div>
     </div>
   );
 }
