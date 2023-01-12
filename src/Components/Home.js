@@ -4,20 +4,11 @@ import SingleProduct from './SingleProduct';
 
 
 function Home() {
-    const {Products} = useContext(Cart);
-    // const transformProducts = ()=>{
-    //     let sortedProducts = Products;
-    //     if (sort) {
-    //         return sortedProducts.sort((a,b)=>
-    //         sort==="lowToHigh"?a.price-b.price:b.price-a.price)
-    //     } else {
-    //         return sortedProducts
-    //     }
-    // }
+    const {product} = useContext(Cart);
     return (
         <div className='productContainer'>                
             <div>
-                {Products.map((prod, index) => (
+                {product.map((prod, index) => (
                     <SingleProduct prod={prod} key={index} />
                 ))}
             </div>
