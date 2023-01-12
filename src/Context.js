@@ -1,17 +1,24 @@
-import React, { createContext, useContext, useReducer, useState } from 'react';
-import { product } from './Data/Products';
-import reducers from './State/Reducers/Index';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export const Cart = createContext();
 
 function Context({children}) {
-    const [cart,setCart]= useState([])
-    const [state,dispatch] = useReducer( reducers ,{
-      Products:product,
-      
-    })
+  const [product,setProduct] = useState([])
+  const proFunc = async ()=>{
+    const res = await fetch('https://dummyjson.com/products/category/womens-bags')
+     const resData = await res.json()
+     setProduct(resData.products)
+  }
+  useEffect(()=>{
+    proFunc()
+  },[])
+    const [cart,setCart]= useState([]);
+    const [mainProduct,setMainProduct] = useState([]);
+    // const [state,dispatch] = useReducer( reducers ,{
+    //   Products:product, 
+    // })
   return (
-    <Cart.Provider value={{...state,dispatch,cart,setCart}}>
+    <Cart.Provider value={{cart,setCart,mainProduct,setMainProduct,product,setProduct}}>
         {children}
     </Cart.Provider>
   )
