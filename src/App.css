@@ -74,6 +74,21 @@
     list-style: none;
     justify-content: space-around;
 }
+.right-nav{
+    display: flex;
+    align-items: center;
+    gap: 33px;
+}
+.right-nav>h6{
+    font-size: 19.3px;
+    color: #EB455F;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+.right-nav>h6:hover{
+    text-decoration: underline;
+}
 
 .icon {
     font-size: 2.1rem;
@@ -144,7 +159,98 @@
 .cartTotal>hr {
     border-top: 1px dashed darkgrey;
 }
-
+.mainProduct{
+    display: flex;
+    gap: 50px;
+    max-width: 930px;
+    width: 100%;
+    margin: 30px 0;
+    box-shadow: 10px 10px 10px 10px lightgrey;
+    padding: 10px;
+}
+.mainProduct-left{
+    flex: 2;
+}
+.mainProduct-left img{
+    width: 100%;
+}
+.mainProduct-right{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    gap: 10px;
+}
+.mainProduct-right>div:nth-of-type(1){
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #878080;
+}
+.mainProduct-right>div:nth-of-type(2){
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    margin-top: -5px;
+}
+.mainProduct-right>div:nth-of-type(3){
+    font-size: 15.1px;
+    margin-top: -5px;
+    font-weight: 500;
+    color: #EB455F;
+}
+.price{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.price>span:nth-of-type(1){
+    font-size: 40px;
+    margin-top: -5px;
+    font-family: sans-serif; 
+}
+.price>span:nth-of-type(2){
+    font-size: 16px;
+    font-weight: bold;
+    color: #EB455F;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    background-color: #EB455F;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 8.3px;
+    gap: 3.4px;
+}
+.productDetails{
+    margin-top: 17px;
+}
+.productDetails>p{
+    font-size: 14.5px;
+    font-family: 'Oswald', sans-serif;
+}
+.form-body{
+    text-align: center;
+}
+.submit-btn{
+    margin-top: 1.7px;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 4.8px 13.5px;
+    border-radius: 5.8px;
+    background-color: #EB455F;
+}
+.sign-out-text{
+    font-size: 12.5px;
+    margin-top: 3px;
+}
+.sign-out-text>span{
+    text-decoration: underline;
+    color: #EB455F;
+    cursor: pointer;
+}
 
 /* RESPONSIVE */
 
@@ -176,5 +282,11 @@
     .cartTotal{
         width: 100%;
         margin-top: 20px;
+    }
+    .mainProduct{
+        display: block;
+    }
+    .mainProduct-right{
+        margin-top: 15px;
     }
 }
