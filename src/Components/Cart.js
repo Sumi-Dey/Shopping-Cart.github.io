@@ -40,7 +40,7 @@ function CartItem() {
             </div>
             <div>
               {amount}<br />
-              <div>Free</div>
+              <div>20</div>
             </div>
           </div>
           <hr />
@@ -49,7 +49,7 @@ function CartItem() {
               <span style={{ fontWeight: "bold" }}>Total Amount</span>
             </div>
             <div>
-              <span style={{ fontWeight: "bold" }}>{amount}</span>
+              <span style={{ fontWeight: "bold" }}>{amount+20}</span>
             </div>
           </div>
         </div>}
