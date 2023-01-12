@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 function CartItem() {
   const { cart, setCart } = useContext(Cart)
   const amount = useSelector(state => state.amount)
-  console.log(cart)
 
   return (
     <>
@@ -18,7 +17,7 @@ function CartItem() {
           (cart.map((prod, index) => (
             <div className='cartItems' key={index} >
               <div>
-                <img src={prod.image} style={{ width: "9rem", height: "9rem" }} alt='...' />
+                <img src={prod.images} style={{ width: "9rem", height: "9rem" }} alt='...' />
               </div>
               <div>
                 {prod.title}<br />
