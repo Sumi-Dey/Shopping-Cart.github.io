@@ -25,7 +25,7 @@ function SingleProducts({ prod }) {
     return (
         <div className='wholecard'>
             <div className="card" style={{ width: "17rem" }}>
-                <Link to='/mainproduct' ><img src={prod.images[0]} style={{ height: "25rem" }} className="card-img-top" alt="..." 
+                <Link to='/mainproduct' ><img src={prod.images[0]} style={{ height: "20.7rem" }} className="card-img-top" alt="..." 
                 onClick={mainProFunc} /></Link>
                 <div className="card-body">
                     <h6>{prod.brand}</h6>
