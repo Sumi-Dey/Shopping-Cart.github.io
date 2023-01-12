@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Cart } from '../Context';
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 function CartItem() {
-  const { cart, setCart } = useContext(Cart)
+  const { cart, setCart,setMainProduct } = useContext(Cart)
   const amount = useSelector(state => state.amount)
 
   return (
@@ -17,7 +18,7 @@ function CartItem() {
           (cart.map((prod, index) => (
             <div className='cartItems' key={index} >
               <div>
-                <img src={prod.images[0]} style={{ width: "9rem", height: "9rem" }} alt='...' />
+                <Link to='/mainproduct'> <img src={prod.images[0]} style={{ width: "9rem", height: "9rem" }} alt='...' onClick={()=>setMainProduct([prod])} /></Link>
               </div>
               <div>
                 {prod.title}<br />
