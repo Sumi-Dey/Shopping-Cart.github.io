@@ -11,25 +11,25 @@ function CartItem() {
     <div>
       <div className='productContainer'>
         <div>
-          {cart.length==0?(<div className='emptycart'>
+          {cart.length===0?(<div className='emptycart'>
             <img src='https://i.pinimg.com/736x/2e/ac/fa/2eacfa305d7715bdcd86bb4956209038--android.jpg' alt='...'/>
           </div>):
           (cart.map((prod, index) => (
             <div className='cartItems' key={index} >
               <div>
-                <img src={prod.images} style={{ width: "9rem", height: "9rem" }} alt='...' />
+                <img src={prod.images[0]} style={{ width: "9rem", height: "9rem" }} alt='...' />
               </div>
               <div>
                 {prod.title}<br />
-                {prod.price}<br />
+                {prod.price}/-<br />
                 <button className="btn btn-light" style={{backgroundColor:"#EB455F",border:'none', color:"white"}} onClick={() => {
-                  setCart(cart.filter((c) => c.price !== prod.price))
+                  setCart(cart.filter((c) => c.id !== prod.id))
                 }}>REMOVE</button>
               </div>
             </div>
           )))}
         </div>
-        {cart.length==0?<div></div>:<div className=' cartTotal'>
+        {cart.length===0?<div></div>:<div className=' cartTotal'>
           <span style={{ color: "gray" }}>Price Details</span>
           <hr />
           <div>
@@ -54,7 +54,7 @@ function CartItem() {
         </div>}
       </div>
     </div>
-    {cart.length==0?<div></div>:<div className='place-order'>
+    {cart.length===0?<div></div>:<div className='place-order'>
             <button className='btn-lg' style={{backgroundColor:"#473C33",color:'white',width:'28%'}}>Place Order</button>
           </div>}
     </>
